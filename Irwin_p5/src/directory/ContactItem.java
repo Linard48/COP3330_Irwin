@@ -1,6 +1,6 @@
 package directory;
 
-public class Person
+public class ContactItem
 
 { public String name;
 

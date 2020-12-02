@@ -13,7 +13,7 @@ public class App {
         while (choice != 3) {
             switch (choice) {
                 case 1:
-                    new Directory();
+                    new ContactList();
                     break;
 
                 case 2:

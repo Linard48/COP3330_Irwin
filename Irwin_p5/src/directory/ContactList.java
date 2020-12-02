@@ -3,9 +3,9 @@ package directory;
 import java.io.*;
 import java.util.*;
 
-public class Directory
+public class ContactList
 
-{public Directory() throws IOException { ArrayList<Person> personList = new ArrayList<Person>();
+{public ContactList() throws IOException { ArrayList<ContactItem> personList = new ArrayList<ContactItem>();
 
     int choice=getOption();
 
@@ -75,9 +75,9 @@ public class Directory
 
     }
 
-    public static void addPerson(ArrayList<Person> personList)
+    public static void addPerson(ArrayList<ContactItem> personList)
 
-    { Person A1 = new Person();
+    { ContactItem A1 = new ContactItem();
 
         Scanner sc = new Scanner(System.in);
 
@@ -99,11 +99,11 @@ public class Directory
 
     }
 
-    public static void searchPerson(ArrayList<Person> personList)
+    public static void searchPerson(ArrayList<ContactItem> personList)
 
     { Scanner scan = new Scanner(System.in);
 
-        Person temp = new Person();
+        ContactItem temp = new ContactItem();
 
         System.out.println("Enter person's name: ");
 
@@ -133,13 +133,13 @@ public class Directory
 
     }
 
-    public static void searchPhone(ArrayList<Person> personList)
+    public static void searchPhone(ArrayList<ContactItem> personList)
 
     { Scanner scan = new Scanner(System.in);
 
         long no;
 
-        Person temp = new Person();
+        ContactItem temp = new ContactItem();
 
         System.out.println("Enter person's phone no: ");
 
@@ -173,13 +173,13 @@ public class Directory
 
     }
 
-    public static void delete(ArrayList<Person> personList)
+    public static void delete(ArrayList<ContactItem> personList)
 
     { Scanner scan = new Scanner(System.in);
 
         long no;
 
-        Person temp = new Person();
+        ContactItem temp = new ContactItem();
 
         System.out.println("Enter person's phone no: ");
 
@@ -217,7 +217,7 @@ public class Directory
 
     }
 
-    public static void display(ArrayList<Person> personList)
+    public static void display(ArrayList<ContactItem> personList)
 
     {
 
@@ -225,11 +225,11 @@ public class Directory
 
     }
 
-    public static void displayphone(ArrayList<Person> personList)
+    public static void displayphone(ArrayList<ContactItem> personList)
 
     {
 
-        Person temp = new Person();
+        ContactItem temp = new ContactItem();
 
         for(int i = 0; i < personList.size(); i++)
 
@@ -241,11 +241,11 @@ public class Directory
 
     }
 
-    public static void editPerson(ArrayList<Person> personList)
+    public static void editPerson(ArrayList<ContactItem> personList)
 
     { Scanner scan = new Scanner(System.in);
 
-        Person temp = new Person();
+        ContactItem temp = new ContactItem();
 
         System.out.println("Enter person's name: ");
 
@@ -276,14 +276,14 @@ public class Directory
         System.out.println("Person not found");
 
     }
-    public static void savelisttofile(ArrayList<Person> ItemList) throws IOException {
+    public static void savelisttofile(ArrayList<ContactItem> ItemList) throws IOException {
         Scanner in = new Scanner(System.in);
         BufferedWriter r;
         PrintWriter w;
         System.out.println("What file would you like to save to? Please enter an exact file location");
         r = new BufferedWriter(new FileWriter(in.nextLine()));
 
-        for (Person task : ItemList) {
+        for (ContactItem task : ItemList) {
             System.out.println(" Writing to the file contents ");
             r.write(task.getName());
             r.write("  ");
@@ -295,7 +295,7 @@ public class Directory
         r.flush();
         r.close();
     }
-    public static void loadlist(ArrayList<Person> ItemList) throws IOException {
+    public static void loadlist(ArrayList<ContactItem> ItemList) throws IOException {
         Scanner in = new Scanner(System.in);
         BufferedReader r;
         PrintWriter w;
@@ -308,7 +308,7 @@ public class Directory
         String[] g = contentLine.split("\\s+");
         for (int i = 0; i < g.length; i++) {
             System.out.println(g[i]);
-            ItemList.add(new Person());
+            ItemList.add(new ContactItem());
         }
     }
 }
